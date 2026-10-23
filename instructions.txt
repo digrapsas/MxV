@@ -1,0 +1,48 @@
+Write a program which
+
+1) Reads the square matrix from the file (assume double values).
+2) Creates the 1D array of the same size as matrix filled with '1.0' values.
+3) Multiply matrix by 1D array.
+4) Verify that result is correct: each element [i] of the resulting vector must be equal to sum of matrix elements in row [i].
+
+Program should take the name of the text file with matrix via command line and then print the result of multiplication.
+Also, it should print whether result's verification (item 4 above) was a success.
+
+Two types of the matrix format should be supported:
+
+1) Full matrix.
+2) Sparse matrix.
+
+Program should determine which matrix format is contained in the file (see below the information on input file format).
+In case of sparse matrix only non-zero elements should be stored.
+
+File format for full matrix:
+First line: 'Full matrix'
+Second line: number N representing size of the square matrix Third and subsequent lines: matrix elements separated by spaces and/or end-of-line symbols.
+
+Example (ignore lines '---------'):
+----------------
+Full matrix
+2
+1 1
+2.0 0.0
+----------------
+
+File format for sparse matrix:
+First line: 'Sparse matrix'
+Second line: number N representing size of the square matrix Third and subsequent lines: triplets, separated by spaces and/or end-of-line symbols. 
+Each triplet consists of 2 integers (row and column of the element) and the matrix element's value.
+Assume that in the file row and column indices are in [1..N] interval. 
+Elements of the sparse matrix which are not in the file as assumed to be zero.
+
+Example (ignore lines '---------'):
+----------------
+Sparse matrix
+2
+1 1 1.0
+1 2 1
+2 1 2.0
+----------------
+
+
+Feel free to use Standard Template Library c++17 standard, but not the boost.
