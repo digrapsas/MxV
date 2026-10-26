@@ -4,9 +4,9 @@
 
 int main() 
 {
-    // std::cout << "Enter matrix file to multiply with unit vector:" << std::endl;
-    const std::string fileName = "input/Sparse4.2.txt";
-    // std::cin >> fileName;
+    std::cout << "Enter matrix file to multiply with unit vector:" << std::endl;
+    std::string fileName;
+    std::cin >> fileName;
 
     std::fstream matrixFile;
     matrixFile.open(fileName, std::ios::in);  

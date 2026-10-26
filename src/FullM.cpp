@@ -25,6 +25,9 @@ void FullM::Assign(std::fstream& matrixFile)
         }
 
         iLine++;
+
+        if (iLine == dim)
+            std::runtime_error("Input matrx contains more lines than the expected dimensions (" + std::to_string(dim) + ")");
     }
 
     matrixFile.close();
@@ -36,7 +39,7 @@ void FullM::CheckSuccess()
     size_t iLine = 0;
     while(isSuccess && iLine < dim)
     {
-        isSuccess = isSuccess && (res[iLine] == std::accumulate(full.begin() + iLine * dim, full.begin() + (iLine + 1) * dim, 0));
+        isSuccess = isSuccess && (res[iLine] == std::accumulate(full.begin() + iLine * dim, full.begin() + (iLine + 1) * dim, 0.0));
         iLine++;
     }
 }

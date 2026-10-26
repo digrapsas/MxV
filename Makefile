@@ -3,7 +3,7 @@ all: main
 
 # compiler and flags
 CXX      = g++
-CXXFLAGS = -g -std=c++17 -pedantic -Wall -Wextra -Werror -Wshadow -Wconversion -Wunreachable-code
+CXXFLAGS = -O3 -g -march=native -std=c++17 -pedantic -Wall -Wextra -Werror -Wshadow -Wconversion -Wunreachable-code
 COMPILE  = $(CXX) $(CXXFLAGS)
 
 debug: CXXFLAGS += -DDEBUG -g
